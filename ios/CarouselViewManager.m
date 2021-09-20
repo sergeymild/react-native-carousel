@@ -1,7 +1,8 @@
-#import "React/RCTViewManager.h"
+#import <React/RCTViewManager.h>
 
-@interface RCT_EXTERN_MODULE(CarouselViewManager, RCTViewManager)
+@interface RCT_EXTERN_MODULE(CarouselView, RCTViewManager)
 
-RCT_EXPORT_VIEW_PROPERTY(color, NSString)
+RCT_EXPORT_VIEW_PROPERTY(currentItemHorizontalMargin, NSNumber);
+RCT_EXPORT_VIEW_PROPERTY(nextItemVisible, NSNumber);
 
 @end

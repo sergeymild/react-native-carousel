@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* Carousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* Carousel.m */; };
-		F4FF95D7245B92E800C19C63 /*  Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  Carousel.swift */; };
-
+		929831E926F8668D003C47B9 /* CarouselViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 929831E726F8668D003C47B9 /* CarouselViewManager.m */; };
+		929831F026F866A8003C47B9 /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929831EC26F866A8003C47B9 /* CarouselFlowLayout.swift */; };
+		929831F126F866A8003C47B9 /* CarouselConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929831EE26F866A8003C47B9 /* CarouselConfiguration.swift */; };
+		929831F226F866A8003C47B9 /* CarouselAnimatedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929831ED26F866A8003C47B9 /* CarouselAnimatedFlowLayout.swift */; };
+		929831F326F866A8003C47B9 /* CarouselNonAnimatedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929831EB26F866A8003C47B9 /* CarouselNonAnimatedFlowLayout.swift */; };
+		929831F626F868D7003C47B9 /* CarouselViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929831F526F868D7003C47B9 /* CarouselViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +29,13 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libCarousel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCarousel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
-		B3E7B5891CC2AC0600A0062D /* Carousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Carousel.m; sourceTree = "<group>"; };
+		929831E726F8668D003C47B9 /* CarouselViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselViewManager.m; sourceTree = "<group>"; };
+		929831EB26F866A8003C47B9 /* CarouselNonAnimatedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselNonAnimatedFlowLayout.swift; sourceTree = "<group>"; };
+		929831EC26F866A8003C47B9 /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
+		929831ED26F866A8003C47B9 /* CarouselAnimatedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAnimatedFlowLayout.swift; sourceTree = "<group>"; };
+		929831EE26F866A8003C47B9 /* CarouselConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselConfiguration.swift; sourceTree = "<group>"; };
+		929831F526F868D7003C47B9 /* CarouselViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewManager.swift; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* Carousel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Carousel-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
-				F4FF95D6245B92E800C19C63 /* Carousel.swift */,
-				B3E7B5891CC2AC0600A0062D /* Carousel.m */,
+				929831F526F868D7003C47B9 /* CarouselViewManager.swift */,
+				929831ED26F866A8003C47B9 /* CarouselAnimatedFlowLayout.swift */,
+				929831EE26F866A8003C47B9 /* CarouselConfiguration.swift */,
+				929831EC26F866A8003C47B9 /* CarouselFlowLayout.swift */,
+				929831EB26F866A8003C47B9 /* CarouselNonAnimatedFlowLayout.swift */,
+				929831E726F8668D003C47B9 /* CarouselViewManager.m */,
 				F4FF95D5245B92E700C19C63 /* Carousel-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,10 +128,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				F4FF95D7245B92E800C19C63 /* Carousel.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* Carousel.m in Sources */,
-
+				929831F626F868D7003C47B9 /* CarouselViewManager.swift in Sources */,
+				929831F226F866A8003C47B9 /* CarouselAnimatedFlowLayout.swift in Sources */,
+				929831F126F866A8003C47B9 /* CarouselConfiguration.swift in Sources */,
+				929831E926F8668D003C47B9 /* CarouselViewManager.m in Sources */,
+				929831F326F866A8003C47B9 /* CarouselNonAnimatedFlowLayout.swift in Sources */,
+				929831F026F866A8003C47B9 /* CarouselFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,11 +246,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Carousel;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "Carousel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -259,10 +265,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Carousel;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "Carousel-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};
