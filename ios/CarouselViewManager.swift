@@ -28,7 +28,6 @@ class UICell: UICollectionViewCell {
 
 @objc
 class _CarouselView: RCTView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-  private var indexOfCellBeforeDragging = 0
   let layout = CarouselNonAnimatedFlowLayout()
   
   var data: [UIView] = []
@@ -57,7 +56,7 @@ class _CarouselView: RCTView, UICollectionViewDataSource, UICollectionViewDelega
   @objc
   var nextItemVisible: NSNumber = 0 {
     didSet {
-      layout.minLineSpacing = CGFloat(nextItemVisible.int64Value)
+      layout.cellOffset = CGFloat(nextItemVisible.int64Value)
     }
   }
   
