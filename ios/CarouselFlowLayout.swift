@@ -15,8 +15,8 @@ class CarouselFlowLayout: UICollectionViewFlowLayout {
     // MARK: - Properties
     
     /// Defaults for all the configuations required to setup the carousel flow layout.
-    private var minimumSpacing: CGFloat = 18.0
-    private var offset: CGFloat = 18.0
+    private var minimumSpacing: CGFloat = 16.0
+    private var offset: CGFloat = 12.0
     private var zoomFactor: CGFloat = 1.0
     private var scalingOffset: CGFloat = 200
     
@@ -75,6 +75,8 @@ extension CarouselFlowLayout: CarouselConfiguration {
         }
         set {
             minimumSpacing =  newValue
+            minimumLineSpacing = newValue
+            collectionView?.reloadData()
         }
     }
     
@@ -84,6 +86,7 @@ extension CarouselFlowLayout: CarouselConfiguration {
         }
         set {
             offset =  newValue
+            collectionView?.reloadData()
         }
     }
     
