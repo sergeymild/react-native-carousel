@@ -20,6 +20,6 @@ class CarouselViewManager : ViewGroupManager<CarouselView>() {
 
   @ReactProp(name = "currentItemHorizontalMargin")
   fun currentItemHorizontalMargin(view: CarouselView, value: Int) {
-    view.currentItemHorizontalMarginPx = PixelUtil.toPixelFromDIP(32f)
+    view.currentItemHorizontalMarginPx = PixelUtil.toPixelFromDIP(value.toFloat())
   }
 }
