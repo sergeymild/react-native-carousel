@@ -12,6 +12,6 @@ class CarouselPackage : ReactPackage {
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf(CarouselViewManager())
+        return listOf(CarouselViewManager(), CarouselPageWrapperManager())
     }
 }
