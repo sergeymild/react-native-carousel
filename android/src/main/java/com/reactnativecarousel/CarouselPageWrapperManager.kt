@@ -14,15 +14,9 @@ class CarouselPageWrapperManager : ViewGroupManager<CarouselPageWrapper>() {
   override fun createViewInstance(reactContext: ThemedReactContext): CarouselPageWrapper {
     return CarouselPageWrapper(reactContext)
   }
-
-  @ReactProp(name = "pageMaxWidth")
-  fun pageMaxWidth(view: CarouselPageWrapper, value: Float) {
-    view.pageMaxWidth = PixelUtil.toPixelFromDIP(value)
-  }
 }
 
 class CarouselPageWrapper(context: Context?) : ReactViewGroup(context) {
-  var pageMaxWidth: Float? = null
 
   override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
     super.onLayout(changed, left, top, right, bottom)
@@ -30,9 +24,6 @@ class CarouselPageWrapper(context: Context?) : ReactViewGroup(context) {
     val tag = getChildAt(0).id
     (context as ReactContext).catalystInstance.reactQueueConfiguration.nativeModulesQueueThread.runOnQueue {
       var width = measuredWidth
-      pageMaxWidth?.let {
-        if (it < width) width = it.toInt()
-      }
       ReactUpdateHelper.getUiManager(context as ReactContext).updateNodeSize(tag, width, measuredHeight)
     }
   }

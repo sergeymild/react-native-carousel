@@ -12,7 +12,6 @@ interface Props {
   readonly nextItemVisible?: number;
   readonly viewPagerStyle?: StyleProp<ViewStyle>;
   readonly style?: StyleProp<ViewStyle>;
-  readonly pageMaxWidth?: number;
 }
 
 export const CarouselViewManager =
@@ -23,16 +22,13 @@ export const CarouselPageWrapper = requireNativeComponent<{
 }>('CarouselPageWrapper');
 
 export const CarouselView: React.FC<Props> = (props) => {
-  console.log('--', props.pageMaxWidth);
   let children =
     Platform.OS === 'ios' ? (
       props.children
     ) : (
       <ViewPager style={props.viewPagerStyle}>
         {React.Children.map(props.children, (c) => (
-          <CarouselPageWrapper pageMaxWidth={props.pageMaxWidth}>
-            {c}
-          </CarouselPageWrapper>
+          <CarouselPageWrapper>{c}</CarouselPageWrapper>
         ))}
       </ViewPager>
     );
