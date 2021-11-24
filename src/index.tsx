@@ -17,12 +17,15 @@ interface Props {
 export const CarouselViewManager =
   requireNativeComponent<Props>('CarouselView');
 
+export const CarouselPageWrapper =
+  requireNativeComponent('CarouselPageWrapper');
+
 export const CarouselView: React.FC<Props> = (props) => {
   let children =
     Platform.OS === 'ios' ? (
       props.children
     ) : (
-      <ViewPager style={props.viewPagerStyle}>{props.children}</ViewPager>
+      <ViewPager style={props.viewPagerStyle}>{React.Children.map(props.children, (c) => <CarouselPageWrapper>{c}</CarouselPageWrapper>)}</ViewPager>
     );
 
   return (
