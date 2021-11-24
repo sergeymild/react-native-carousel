@@ -22,12 +22,18 @@ export default function App() {
         nextItemVisible={12}
         style={{ width: '100%', height: 180 }}
         viewPagerStyle={styles.viewPager}
+        pageMaxWidth={300}
       >
         {banners.map((b) => (
           <Image
             key={b.image}
             source={b.image}
-            style={{ overflow: 'hidden', height: 180, borderRadius: 20 }}
+            style={{
+              overflow: 'hidden',
+              height: 180,
+              width: 300,
+              borderRadius: 20,
+            }}
             resizeMode={'cover'}
           />
         ))}
