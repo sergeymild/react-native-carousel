@@ -11,20 +11,23 @@ import React
 
 class UICell: UICollectionViewCell {
   override func layoutSubviews() {
-    super.layoutSubviews()
-    contentView.clipsToBounds = true
-    if contentView.subviews.count > 0 {
-      contentView.subviews[0].frame = .init(origin: .zero, size: frame.size)
-        let tag = self.contentView.subviews[0].reactTag
-        let view = self.contentView.subviews[0]
-        RCTExecuteOnUIManagerQueue {
-            if RCTBridge.current().uiManager.shadowView(forReactTag: tag) != nil {
-                RCTExecuteOnMainQueue {
-                    RCTBridge.current().uiManager.setSize(view.frame.size, for: view)
-                }
-            }
-        }
-    }
+      super.layoutSubviews()
+      contentView.clipsToBounds = true
+      if contentView.subviews.count > 0 {
+          let tag = self.contentView.subviews[0].reactTag
+          let view = self.contentView.subviews[0]
+          let size = frame.size
+          RCTExecuteOnUIManagerQueue {
+              if RCTBridge.current().uiManager.shadowView(forReactTag: tag) != nil {
+                  RCTExecuteOnMainQueue {
+                      RCTBridge.current().uiManager.setSize(size, for: view)
+                      self.setNeedsLayout()
+                      self.layoutIfNeeded()
+                  }
+              }
+          }
+          contentView.subviews[0].frame = .init(origin: .zero, size: frame.size)
+      }
   }
   
   override func prepareForReuse() {
