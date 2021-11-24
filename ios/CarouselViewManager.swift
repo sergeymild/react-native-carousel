@@ -15,6 +15,15 @@ class UICell: UICollectionViewCell {
     contentView.clipsToBounds = true
     if contentView.subviews.count > 0 {
       contentView.subviews[0].frame = .init(origin: .zero, size: frame.size)
+        let tag = self.contentView.subviews[0].reactTag
+        let view = self.contentView.subviews[0]
+        RCTExecuteOnUIManagerQueue {
+            if RCTBridge.current().uiManager.shadowView(forReactTag: tag) != nil {
+                RCTExecuteOnMainQueue {
+                    RCTBridge.current().uiManager.setSize(view.frame.size, for: view)
+                }
+            }
+        }
     }
   }
   
