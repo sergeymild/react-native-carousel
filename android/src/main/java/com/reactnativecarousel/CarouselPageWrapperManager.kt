@@ -1,6 +1,7 @@
 package com.reactnativecarousel
 
 import android.content.Context
+import android.graphics.Color
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.PixelUtil
 import com.facebook.react.uimanager.ThemedReactContext
@@ -17,6 +18,10 @@ class CarouselPageWrapperManager : ViewGroupManager<CarouselPageWrapper>() {
 }
 
 class CarouselPageWrapper(context: Context?) : ReactViewGroup(context) {
+
+  init {
+      backgroundColor = Color.YELLOW
+  }
 
   override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
     super.onLayout(changed, left, top, right, bottom)

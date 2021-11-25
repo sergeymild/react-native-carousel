@@ -22,7 +22,6 @@ export default function App() {
         nextItemVisible={12}
         style={{ width: '100%', height: 180 }}
         viewPagerStyle={styles.viewPager}
-        pageMaxWidth={300}
       >
         {banners.map((b) => (
           <Image
