@@ -18,6 +18,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <CarouselView
+        pageSelected={(index) => console.log('-----', index)}
         currentItemHorizontalMargin={24}
         nextItemVisible={12}
         style={{ width: '100%', height: 180 }}

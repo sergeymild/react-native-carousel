@@ -4266,6 +4266,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-pager-view@5.3.4:
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.3.4.tgz#832cacf8afb8c8299decb209a8335827567b6c80"
+  integrity sha512-W0A4g7lvk8zFJ99N3s1zcWZV+Hdh0d9SNmHc3/KAi2HY6XtGcX04sUQr9NnncFm/iWx33XgXoHCTUfvRU4idbQ==
+
 react-native@0.63.4:
   version "0.63.4"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.63.4.tgz#2210fdd404c94a5fa6b423c6de86f8e48810ec36"
