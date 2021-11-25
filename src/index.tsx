@@ -12,15 +12,15 @@ interface Props {
   readonly nextItemVisible?: number;
   readonly viewPagerStyle?: StyleProp<ViewStyle>;
   readonly style?: StyleProp<ViewStyle>;
-  readonly onPageSelect?: (pageIndex: number) => void;
+  readonly onPageSelected?: (pageIndex: number) => void;
 }
 
 export const CarouselViewManager =
   requireNativeComponent<Props>('CarouselView');
 
-export const CarouselPageWrapper = requireNativeComponent<{
-  pageMaxWidth?: number;
-}>('CarouselPageWrapper');
+export const CarouselPageWrapper = requireNativeComponent(
+  'CarouselPageWrapper'
+);
 
 export const CarouselView: React.FC<Props> = (props) => {
   let children =
@@ -30,8 +30,8 @@ export const CarouselView: React.FC<Props> = (props) => {
       <ViewPager
         style={props.viewPagerStyle}
         onPageSelected={
-          props.onPageSelect
-            ? (e) => props.onPageSelect?.(e.nativeEvent.position)
+          props.onPageSelected
+            ? (e) => props.onPageSelected?.(e.nativeEvent.position)
             : undefined
         }
       >
@@ -46,9 +46,10 @@ export const CarouselView: React.FC<Props> = (props) => {
       style={props.style}
       currentItemHorizontalMargin={props.currentItemHorizontalMargin}
       nextItemVisible={props.nextItemVisible}
-      pageSelect={
-        props.onPageSelect
-          ? (e) => props.onPageSelect?.(e.nativeEvent.pageIndex)
+      onPageSelected={
+        props.onPageSelected
+          ? //@ts-ignore
+            (e) => props.onPageSelected?.(e.nativeEvent.position)
           : undefined
       }
     >

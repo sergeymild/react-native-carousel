@@ -29,7 +29,7 @@ class UICell: UICollectionViewCell {
             contentView.subviews[0].frame = .init(origin: .zero, size: frame.size)
         }
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         contentView.subviews.forEach {
@@ -57,38 +57,38 @@ class _CarouselView: RCTView, UICollectionViewDataSource, UICollectionViewDelega
         cv.delegate = self
         return cv
     }()
-    
+
     @objc
-    var pageSelect: RCTBubblingEventBlock?
-    
+    var onPageSelected: RCTDirectEventBlock?
+
     @objc
     var currentItemHorizontalMargin: NSNumber = 0 {
         didSet {
             layout.minLineSpacing = CGFloat(currentItemHorizontalMargin.int64Value)
         }
     }
-    
+
     @objc
     var nextItemVisible: NSNumber = 0 {
         didSet {
             layout.cellOffset = CGFloat(nextItemVisible.int64Value)
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(collectionView)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = .init(origin: .zero, size: frame.size)
     }
-    
+
     override func addSubview(_ view: UIView) {
         if view is UICollectionView {
             super.addSubview(view)
@@ -96,14 +96,14 @@ class _CarouselView: RCTView, UICollectionViewDataSource, UICollectionViewDelega
             data.append(view)
         }
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
         return data.count
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -115,14 +115,14 @@ class _CarouselView: RCTView, UICollectionViewDataSource, UICollectionViewDelega
         cell.contentView.addSubview(data[indexPath.row])
         return cell
     }
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         let w = scrollView.bounds.size.width
         let page = Int(ceil(x/w))
         if page == currentPage { return }
         currentPage = page
-        pageSelect?(["pageIndex": currentPage])
+        self.onPageSelected?(["position": currentPage])
     }
 }
 
@@ -131,7 +131,7 @@ class CarouselViewManager: RCTViewManager {
     override class func requiresMainQueueSetup() -> Bool {
         true
     }
-    
+
     override func view() -> UIView! {
         _CarouselView()
     }
