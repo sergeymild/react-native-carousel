@@ -3,13 +3,9 @@ package com.reactnativecarousel
 import android.content.Context
 import android.graphics.Rect
 import android.view.View
-import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.facebook.react.uimanager.PixelUtil
-import com.facebook.react.uimanager.ThemedReactContext
-import com.facebook.react.uimanager.ViewGroupManager
-import com.facebook.react.uimanager.annotations.ReactProp
 import com.facebook.react.views.view.ReactViewGroup
 
 class HorizontalMarginItemDecoration(var horizontalMarginInDp: Int) : RecyclerView.ItemDecoration() {
@@ -34,8 +30,8 @@ class CarouselView(context: Context?) : ReactViewGroup(context) {
   override fun addView(child: View?, index: Int) {
     super.addView(child, index)
 
-    if (child is FrameLayout) {
-      val pager = child.getChildAt(0) as ViewPager2
+    if (child is ViewPager2) {
+      val pager = child
       // Add a PageTransformer that translates the next and previous items horizontally
       // towards the center of the screen, which makes them visible
       pager.offscreenPageLimit = 1
